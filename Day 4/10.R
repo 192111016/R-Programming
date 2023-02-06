@@ -1,0 +1,12 @@
+library(dplyr)
+library(tibble)
+library(explore)
+titanic <- as_tibble(Titanic)
+#(i)
+titanic %>% explore(Class, target = Survived, n = n, split = FALSE)
+#(ii)
+titanic %>% explore(Sex, target = Survived, n = n)
+#(iii)
+library(ggplot2)
+ggplot(data.frame(Titanic),aes(x=Age))+
+  geom_histogram()
